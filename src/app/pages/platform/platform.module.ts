@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { PlatformRoutingModule } from './platform-routing.module';
 import { ArtistProfileComponent } from './components/artist-profile/artist-profile.component';
 import { ArtistAudioContentComponent } from './components/artist-audio-content/artist-audio-content.component';
-
+//NGZORRO
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ArtistAudioContentComponent } from './components/artist-audio-content/a
   ],
   imports: [
     CommonModule,
-    PlatformRoutingModule
+    PlatformRoutingModule,
+    NzIconModule
   ]
 })
 export class PlatformModule { }

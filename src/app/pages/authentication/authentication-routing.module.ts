@@ -9,9 +9,9 @@ import { MemberSubscriptionComponent } from './components/member-subscription/me
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path:'forgotPassword',component: ForgotPasswordComponent},
-  { path: 'changePassword',component:ChangePasswordComponent},
-  { path: 'memberSubscription',component: MemberSubscriptionComponent}
+  { path: 'forgotPassword', component: ForgotPasswordComponent },
+  { path: 'changePassword', component: ChangePasswordComponent },
+  { path: 'memberSubscription', component: MemberSubscriptionComponent }
 
 ];
 

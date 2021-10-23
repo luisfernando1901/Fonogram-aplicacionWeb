@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-member-subscription',
@@ -34,7 +35,7 @@ export class MemberSubscriptionComponent implements OnInit {
     
   ];
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -42,5 +43,10 @@ export class MemberSubscriptionComponent implements OnInit {
   selectCard(){
     console.log("Selected");
   }
+
+  makeSubscription(){
+    this.router.navigate(['/platform/fonogram/artistAudioContent']);
+  }
+  
 
 }
