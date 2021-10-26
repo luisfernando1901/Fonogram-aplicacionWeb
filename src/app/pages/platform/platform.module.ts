@@ -6,17 +6,19 @@ import { ArtistProfileComponent } from './components/artist-profile/artist-profi
 import { ArtistAudioContentComponent } from './components/artist-audio-content/artist-audio-content.component';
 //NGZORRO
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { PlyrModule } from 'ngx-plyr';
+import { HomeComponent } from './components/home/home.component';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 @NgModule({
   declarations: [
     ArtistProfileComponent,
-    ArtistAudioContentComponent
+    ArtistAudioContentComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
     PlatformRoutingModule,
     NzIconModule,
-    PlyrModule
+    NzAvatarModule
   ]
 })
 export class PlatformModule { }

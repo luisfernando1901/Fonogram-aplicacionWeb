@@ -1,0 +1,32 @@
+<div class="flex flex-col">
+    <!--Titulo-->
+    <div class="flex flex-col text-center text-white mb-6">
+        <p class="text-xl font-bold">CIENTOS DE PODCASTS EXCLUSIVOS & AUDIOLIBROS</p>
+        <p class="font-medium">Explora una selección de los podcasts exclusivos & audiolibros en Fonogram</p>
+    </div>
+    <!--End Titulo-->
+    <!--Contenido-->
+    <div class="flex justify-center flex-row flex-wrap">
+        <!--Tarjeta-->
+        <div *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1,1]" class="flex flex-col p-4">
+            <div class="flex flex-col">
+                <button>
+                    <img class="w-36 h-36 rounded-2xl sm:h-52 sm:w-52"
+                    src="https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E="
+                    alt="">
+                    <div class="-mt-10 mr-3 text-right">
+                        <i style="font-size: 32px;" nz-icon nzType="play-circle" nzTheme="fill"></i>
+                    </div>
+                </button>
+                <nz-avatar-group class="mt-4">
+                    <nz-avatar nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+                    </nz-avatar>
+                    <nz-avatar style="background-color: #f56a00" nzText="U"></nz-avatar>
+                    <nz-avatar style="background-color: #87d068" nz-tooltip nzTooltipTitle="NG-ZORRO User"
+                        nzIcon="user"></nz-avatar>
+                    <nz-avatar style="background-color: #1890ff" nzText="NG"></nz-avatar>
+                </nz-avatar-group>
+            </div>
+        </div>
+        <!--End Contenido-->
+    </div>
