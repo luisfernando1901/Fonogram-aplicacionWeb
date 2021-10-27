@@ -1,12 +1,71 @@
 <div class="flex flex-col">
-    <div class="flex flex-row py-8 bg-gray-700">
+    <!--Header-->
+    <div class="flex flex-col sm:flex-row flex-wrap content-center sm:justify-start py-8 bg-no-repeat bg-fixed bg-gray-700" style="background-size: 1600px; background-image: url('https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E=');">
         <img class="w-36 h-36 mx-8 rounded-2xl sm:h-52 sm:w-52 shadow-2xl"
             src="https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E="
             alt="">
-        <div class="flex flex-col justify-end text-white">
-            <p class="text-lg">Podcast</p>
-            <p class="text-6xl font-bold">Tracción</p>
-            <p class="text-lg">Victor Cortés</p>
+        <div class="flex flex-col sm:text-left sm:pt-0 pt-3 text-center justify-end text-white">
+            <p class="sm:text-lg text-base">Podcast</p>
+            <p class="sm:text-6xl text-4xl font-bold">Tracción</p>
+            <p class="sm:text-lg text-base">Victor Cortés</p>
         </div>
     </div>
+    <!--End Header-->
+    <!--Content-->
+    <div class="p-3 sm:p-8 text-white">
+        <div class="flex sm:flex-row flex-col-reverse">
+            <!--Left zone-->
+            <div class="sm:w-4/5 sm:pr-10">
+                <p class="text-lg font-bold">Todos los perfiles de contenido</p>
+                <div class="w-full h-0.5 mt-2 mb-2 bg-gray-300 opacity-30"></div>
+                <!--Card Episode-->
+                <div *ngFor="let item of [1,1,1,1,1,1]" class="flex flex-row sm:py-4 p-2">
+                    <img class="w-20 h-20 sm:mx-8 mx-2 rounded-2xl sm:h-32 sm:w-32"
+                        src="https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E="
+                        alt="">
+                    <div class="flex flex-col justify-between pt-1 text-white">
+                        <!--Tag-->
+                        <div class="flex flex-row justify-between">
+                            <p class="text-lg">1. Título</p>
+                            <div class="rounded-2xl bg-gray-700 py-1 px-2">
+                                <p class="text-white text-xs">Podcast</p>
+                            </div>
+                        </div>
+                        <!--End Tag-->
+                        
+                        <p class="text-sm font-normal text-gray-300 line-clamp-2">Descripción del episodio. Este puede ser tan largo como
+                            el usuario desee o super corto, pero el tema es que el texto debe ser corto.
+                            Descripción del episodio. Este puede ser tan largo como
+                            el usuario desee o super corto, pero el tema es que el texto debe ser corto.
+                            Descripción del episodio. Este puede ser tan largo como
+                            el usuario desee o super corto, pero el tema es que el texto debe ser corto.Descripción del episodio. Este puede ser tan largo como
+                            el usuario desee o super corto, pero el tema es que el texto debe ser corto.
+                        </p>
+                        <div class="flex flex-row space-x-6">
+                            <i style="font-size: 28px;" nz-icon nzType="play-circle" nzTheme="fill"></i>
+                            <p class="text-base font-semibold text-gray-300">21 min 3 s</p>
+                            <nz-avatar-group>
+                                <nz-avatar nzIcon="user"
+                                    nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+                                </nz-avatar>
+                                <nz-avatar style="background-color: #f56a00" nzText="U"></nz-avatar>
+                                <nz-avatar style="background-color: #87d068" nz-tooltip nzTooltipTitle="NG-ZORRO User"
+                                    nzIcon="user"></nz-avatar>
+                                <nz-avatar style="background-color: #1890ff" nzText="NG"></nz-avatar>
+                            </nz-avatar-group>
+                        </div>
+                    </div>
+                </div>
+                <!--End Card Episode-->
+            </div>
+            <!--End Left zone-->
+            <!--Right zone-->
+            <div class="sm:w-1/5 mb-3">
+                <p class="text-lg font-bold">Acerca de</p>
+                <p class="text-gray-300">Aqui va la descripción acerca del playlist profile</p>
+            </div>
+            <!--End Right zone-->
+        </div>
+    </div>
+    <!--End Content-->
 </div>
