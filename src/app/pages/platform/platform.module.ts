@@ -18,7 +18,7 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
     CommonModule,
     PlatformRoutingModule,
     NzIconModule,
-    NzAvatarModule
+    NzAvatarModule,
   ]
 })
 export class PlatformModule { }

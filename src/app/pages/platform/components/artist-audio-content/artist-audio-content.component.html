@@ -1,78 +1,56 @@
-<div>
-    <img src="../../../../../assets/images/fonogram-logo.png" class="h-7 fixed mt-3 ml-5" alt="">
-</div>
-
-<!-- Header-->
-
-<div class="bg-gray-900 pattern">
-    <div class="container px-6 mx-auto">
-        <nav class="flex py-2 pt-3 justify-end sm:flex-row items-end">
-            <div class="flex flex-row mt-10 items-center sm:mt-2 -mx-2">
-                <a
-                    class="px-3 flex items-center py-1 text-sm font-semibold text-white transition-colors duration-200 transform border-2 rounded-md hover:bg-gray-700"><i
-                        class="mr-1" nz-icon nzType="audio" nzTheme="outline"></i> Crear</a>
-                <a href="#"
-                    class="px-3 py-2 mx-2 text-sm font-semibold text-white transition-colors duration-200 transform bg-black rounded-md hover:bg-gray-800">Descargar
-                    app</a>
-            </div>
-        </nav>
-
-        <div class="flex flex-col items-center py-6 lg:h-128 lg:flex-row">
-            <div class="lg:w-1/2">
-                <h2 class="text-4xl font-semibold text-gray-100">Fonogram Team</h2>
-
-                <h3 class="text-2xl font-semibold text-gray-100">
-                    Perfil: <span class="text-indigo-400">Podcast </span><span class="text-gray-400">| Audio Libro |
-                        Audio Curso | Evento</span>
-                </h3>
-
-                <p class="mt-3 text-gray-100">Bienvenido al podcast de STARTUP, disfruta de los episodios que
-                    tenemos para ti.</p>
-            </div>
-
-            <div class="flex mt-8 lg:w-1/2 justify-center lg:justify-end lg:mt-0">
-                <div class="w-2/5 shadow-2xl bg-white rounded-lg dark:bg-gray-800">
-                    <div class="p-1">
-                        <img src="../../../../../assets/images/fonogram-img-profile.png" alt="">
+<div class="flex flex-col">
+    <!--Header-->
+    <div class="flex flex-col sm:flex-row flex-wrap content-center sm:justify-start py-8 bg-gray-700">
+        <img class="w-36 h-36 mx-8 rounded-2xl sm:h-52 sm:w-52 shadow-2xl"
+            src="https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E="
+            alt="">
+        <div class="flex flex-col sm:text-left sm:pt-0 pt-3 text-center justify-end text-white">
+            <p class="sm:text-lg text-base">Podcast</p>
+            <p class="sm:text-6xl text-4xl font-bold">Tracción</p>
+            <p class="sm:text-lg text-base">Victor Cortés</p>
+        </div>
+    </div>
+    <!--End Header-->
+    <!--Content-->
+    <div class="p-3 sm:p-8 text-white">
+        <div class="flex sm:flex-row flex-col-reverse">
+            <!--Left zone-->
+            <div class="sm:w-4/5 sm:pr-10">
+                <p class="text-lg font-bold">Todos los episodios</p>
+                <div class="w-full h-0.5 mt-3 mb-2 bg-gray-300 opacity-30"></div>
+                <!--Card Episode-->
+                <div *ngFor="let item of [1,1,1,1,1,1]" class="flex flex-row sm:py-4 p-2">
+                    <img class="w-20 h-20 sm:mx-8 mx-2 rounded-2xl sm:h-32 sm:w-32"
+                        src="https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E="
+                        alt="">
+                    <div class="flex flex-col justify-between pt-1 text-white">
+                        <p class="text-lg">1. Título</p>
+                        <p class="text-base font-normal text-gray-300">Descripción del episodio.</p>
+                        <div class="flex flex-row space-x-6">
+                            <i style="font-size: 28px;" nz-icon nzType="play-circle" nzTheme="fill"></i>
+                            <p class="text-base font-semibold">21 min 3 s</p>
+                            <nz-avatar-group>
+                                <nz-avatar nzIcon="user"
+                                    nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+                                </nz-avatar>
+                                <nz-avatar style="background-color: #f56a00" nzText="U"></nz-avatar>
+                                <nz-avatar style="background-color: #87d068" nz-tooltip nzTooltipTitle="NG-ZORRO User"
+                                    nzIcon="user"></nz-avatar>
+                                <nz-avatar style="background-color: #1890ff" nzText="NG"></nz-avatar>
+                            </nz-avatar-group>
+                        </div>
                     </div>
                 </div>
+                <!--End Card Episode-->
             </div>
+            <!--End Left zone-->
+            <!--Right zone-->
+            <div class="sm:w-1/5 mb-3">
+                <p class="text-lg font-bold">Acerca de</p>
+                <p class="text-gray-300">Aqui va la descripción acerca del playlist profile</p>
+            </div>
+            <!--End Right zone-->
         </div>
     </div>
+    <!--End Content-->
 </div>
-<!-- End Header -->
-
-<!-- AudioContent -->
-<div class="flex flex-col content-center justify-center items-center mt-16 pb-6">
-    <!-- AudioCard -->
-    <div *ngFor="let audio of [1,1,1]"
-        class="shadow-2xl sm:w-3/5 w-4/5 audio-card-bg-color rounded-lg flex flex-row flex-wrap justify-center xl:justify-start p-3 m-3">
-        <div class="m-3">
-            <img class="h-36" src="https://f4.bcbits.com/img/0018958918_10.jpg" alt="">
-        </div>
-        <div class="m-3 w-2/3 flex flex-col justify-between text-white">
-            <p class="font-normal text-base">Episodio 1</p>
-            <p class="font-bold text-lg">Audio Club - Podcasting</p>
-            <p class="text-gray-400 text-sm break-words mt-3">Descripción del contendio del audio del artista. Donde
-                en realidad de seben escribir paabras sino no tendría sentido todo el wrap que estoy haciendo si es
-                que no agarro por palabras simples y segmentadas.K</p>
-
-            <div class="flex flex-row space-x-3 mt-3">
-                <p class="font-bold text-xs mt-3">ft. Luis, Alexis, Geo</p>
-                <div class="flex -space-x-1">
-                    <a *ngFor="let artist of [1,1,1,1]" href="#" class="">
-                        <img class="inline-block h-8 w-8 rounded-full object-cover"
-                            src="https://www.tailwind-kit.com/images/person/4.jpg" alt="Guy" />
-                    </a>
-                </div>
-            </div>
-            <!-- Audio Player -->
-            <div class="mt-6">
-                <div class="w-full" plyr plyrType='audio' plyrTitle="Video 1" [plyrPlaysInline]="true"
-                    [plyrSources]="videoSources" (plyrInit)="player = $event" (plyrPlay)="played($event)"></div>
-            </div>
-        </div>
-    </div>
-
-</div>
-<!-- End AudioContent -->
