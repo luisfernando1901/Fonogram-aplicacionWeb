@@ -1,14 +1,98 @@
-<div class="flex flex-col">
+<div class="flex flex-col custom-bg">
     <!--Header-->
-    <div  class="flex flex-col sm:flex-row flex-wrap content-center sm:justify-start py-8 bg-no-repeat bg-fixed bg-gray-700" style="background-size: 1600px; background-image: url('https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E=');">
-        <img class="w-36 h-36 mx-8 rounded-2xl sm:h-52 sm:w-52 shadow-2xl"
-            src="https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E="
-            alt="">
-        <div class="flex flex-col sm:text-left sm:pt-0 pt-3 text-center justify-end text-white">
-            <p class="sm:text-lg text-base">Podcast</p>
-            <p class="sm:text-6xl text-4xl font-bold">Tracción</p>
-            <p class="sm:text-lg text-base">Victor Cortés</p>
+    <div class="flex flex-col items-center sm:flex-row sm:justify-between py-8 bg-no-repeat bg-fixed bg-gray-700"
+        style="background-size: 1600px; background-image: url('https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E=');">
+        <div class="flex flex-col lg:flex-row">
+            <img class="w-36 h-36 mx-8 rounded-2xl sm:h-52 sm:w-52 shadow-2xl"
+                src="https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E="
+                alt="">
+            <div class="flex flex-col lg:text-left lg:pt-0 pt-3 text-center justify-end text-white">
+                <p class="sm:text-lg text-base">Podcast</p>
+                <p class="sm:text-6xl text-4xl font-bold">Tracción</p>
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="flex flex-row">
+                        <p class="sm:text-lg text-base">Victor Cortés</p>
+                        <span class="m-1 text-green-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                    </div>
+                    <nz-avatar-group class="m-2">
+                        <nz-avatar nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+                        </nz-avatar>
+                        <nz-avatar style="background-color: #f56a00" nzText="U"></nz-avatar>
+                        <nz-avatar style="background-color: #87d068" nz-tooltip nzTooltipTitle="NG-ZORRO User"
+                            nzIcon="user"></nz-avatar>
+                        <nz-avatar style="background-color: #1890ff" nzText="NG"></nz-avatar>
+                    </nz-avatar-group>
+                </div>
+            </div>
         </div>
+        <!--Follow card-->
+        <div class="bg-gray-800 rounded-lg w-72 text-gray-400 p-3 mt-3 sm:mt-0 sm:mr-8 sm:-mb-32">
+            <button class="bg-purple-900 w-full rounded-lg py-2">
+                <p class="text-white font-bold">+ Seguir</p>
+            </button>
+            <div class="flex flex-col p-3">
+                <div class="flex flex-row py-1 justify-between">
+                    <div class="flex space-x-1">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <p>100 seguidores</p>
+                    </div>
+                    <button class="text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                          </svg>
+                    </button>
+                </div>
+                <div class="flex flex-row py-1 justify-between">
+                    <div class="flex space-x-1">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                              </svg>
+                        </span>
+                        <p>Creado en Octubre 2022</p>
+                    </div>
+                    <button class="text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+                          </svg>
+                    </button>
+                </div>
+                <div class="flex flex-row py-1">
+                    <div class="flex space-x-1">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                              </svg>
+                        </span>
+                        <p>Ciudad de México</p>
+                    </div>
+                </div>
+                <div class="flex flex-row py-1">
+                    <div class="flex space-x-1">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
+                              </svg>
+                        </span>
+                        <p>Enlace web</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Follow card-->
     </div>
     <!--End Header-->
     <!--Content-->
@@ -16,7 +100,7 @@
         <div class="flex sm:flex-row flex-col-reverse">
             <!--Left zone-->
             <div class="sm:w-4/5 sm:pr-10">
-                <p class="text-lg font-bold">Todos los episodios</p>
+                <p class="text-lg font-bold">Todos los episodios <span class="text-xl pl-3">27</span></p>
                 <div class="w-full h-0.5 mt-2 mb-2 bg-gray-300 opacity-30"></div>
                 <!--Card Episode-->
                 <div *ngFor="let item of [1,1,1,1,1,1]" class="flex flex-row sm:py-4 p-2">
@@ -25,12 +109,14 @@
                         alt="">
                     <div class="flex flex-col justify-between pt-1 text-white">
                         <p class="text-lg">1. Título</p>
-                        <p class="text-sm font-normal text-gray-300 line-clamp-2">Descripción del episodio. Este puede ser tan largo como
+                        <p class="text-sm font-normal text-gray-300 line-clamp-2">Descripción del episodio. Este puede
+                            ser tan largo como
                             el usuario desee o super corto, pero el tema es que el texto debe ser corto.
                             Descripción del episodio. Este puede ser tan largo como
                             el usuario desee o super corto, pero el tema es que el texto debe ser corto.
                             Descripción del episodio. Este puede ser tan largo como
-                            el usuario desee o super corto, pero el tema es que el texto debe ser corto.Descripción del episodio. Este puede ser tan largo como
+                            el usuario desee o super corto, pero el tema es que el texto debe ser corto.Descripción del
+                            episodio. Este puede ser tan largo como
                             el usuario desee o super corto, pero el tema es que el texto debe ser corto.
                         </p>
                         <div class="flex flex-row space-x-6">
@@ -61,3 +147,11 @@
     </div>
     <!--End Content-->
 </div>
+<!--Footer-->
+<footer class="flex flex-col text-center items-center text-white py-3 custom-bg">
+    <p class="py-1">Publica en</p>
+    <img src="../../../../../assets/images/fonogram-purple.png" class="w-64 py-6" alt="">
+    <p class="py-1">Términos y condiciones | Aviso de privacidad</p>
+    <p class="py-1">Fonogram derechos reservados 2022</p>
+</footer>
+<!--End Footer-->
