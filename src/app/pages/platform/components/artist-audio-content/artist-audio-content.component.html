@@ -1,14 +1,14 @@
 <div class="flex flex-col custom-bg">
     <!--Header-->
-    <div class="flex flex-col items-center sm:flex-row sm:justify-between py-8 bg-no-repeat bg-fixed bg-gray-700"
+    <div class="flex flex-col items-center sm:flex-row sm:justify-between py-8 bg-no-repeat bg-fixed"
         style="background-size: 1600px; background-image: url('https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E=');">
-        <div class="flex flex-col lg:flex-row">
+        <div class="flex flex-col items-center lg:items-end z-10 lg:flex-row">
             <img class="w-36 h-36 mx-8 rounded-2xl sm:h-52 sm:w-52 shadow-2xl"
                 src="https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E="
                 alt="">
             <div class="flex flex-col lg:text-left lg:pt-0 pt-3 text-center justify-end text-white">
                 <p class="sm:text-lg text-base">Podcast</p>
-                <p class="sm:text-6xl text-4xl font-bold">Tracción</p>
+                <p class="sm:text-6xl text-4xl font-bold">Tracción de los metabots</p>
                 <div class="flex flex-col lg:flex-row items-center">
                     <div class="flex flex-row">
                         <p class="sm:text-lg text-base">Victor Cortés</p>
@@ -33,7 +33,7 @@
             </div>
         </div>
         <!--Follow card-->
-        <div class="bg-gray-800 rounded-lg w-72 text-gray-400 p-3 mt-3 sm:mt-0 sm:mr-8 sm:-mb-32">
+        <div class="bg-gray-800 rounded-lg w-72 z-10 text-gray-400 p-3 mt-3 sm:mt-0 sm:mr-8 sm:-mb-32">
             <button class="bg-purple-900 w-full rounded-lg py-2">
                 <p class="text-white font-bold">+ Seguir</p>
             </button>
@@ -95,8 +95,11 @@
         <!--End Follow card-->
     </div>
     <!--End Header-->
+    <div class="flex h-56 z-0 -mt-56 bg-gradient-to-b from-transparent via-transparent to-custom-bg">
+
+    </div>
     <!--Content-->
-    <div class="p-3 sm:p-8 text-white">
+    <div class="p-3 sm:py-12 sm:px-8 text-white">
         <div class="flex sm:flex-row flex-col-reverse">
             <!--Left zone-->
             <div class="sm:w-4/5 sm:pr-10">
@@ -119,9 +122,9 @@
                             episodio. Este puede ser tan largo como
                             el usuario desee o super corto, pero el tema es que el texto debe ser corto.
                         </p>
-                        <div class="flex flex-row space-x-6">
+                        <div class="flex flex-row items-center space-x-6">
                             <i style="font-size: 28px;" nz-icon nzType="play-circle" nzTheme="fill"></i>
-                            <p class="text-base font-semibold text-gray-300">21 min 3 s</p>
+                            <p class="text-xs sm:text-base font-semibold text-gray-300">21 min 3 s</p>
                             <nz-avatar-group>
                                 <nz-avatar nzIcon="user"
                                     nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
@@ -138,9 +141,22 @@
             </div>
             <!--End Left zone-->
             <!--Right zone-->
-            <div class="sm:w-1/5 mb-3">
-                <p class="text-lg font-bold">Acerca de</p>
-                <p class="text-gray-300">Aqui va la descripción acerca del playlist profile</p>
+            <div class="flex flex-col sm:w-1/5 mb-3">
+                <div class="w-full">
+                    <p class="text-lg font-bold">Acerca de</p>  
+                    <p class="text-gray-300">Aqui va la descripción acerca del playlist profile.</p>
+                </div>
+                <div class="w-full mt-4">
+                    <p class="text-lg font-bold">Pines del artista</p>
+                    <!--Lista de pines-->
+                    <div class="flex flex-row flex-wrap">
+                        <span class="p-1" *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd" />
+                              </svg>
+                        </span>
+                    </div>
+                    <!--End Lista de pines-->
             </div>
             <!--End Right zone-->
         </div>
@@ -150,7 +166,7 @@
 <!--Footer-->
 <footer class="flex flex-col text-center items-center text-white py-3 custom-bg">
     <p class="py-1">Publica en</p>
-    <img src="../../../../../assets/images/fonogram-purple.png" class="w-64 py-6" alt="">
+    <img src="../../../../../assets/images/fonogram-purple.png" class="w-52 sm:w-64 py-6" alt="">
     <p class="py-1">Términos y condiciones | Aviso de privacidad</p>
     <p class="py-1">Fonogram derechos reservados 2022</p>
 </footer>

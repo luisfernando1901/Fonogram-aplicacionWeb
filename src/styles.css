@@ -10,3 +10,7 @@
 .custom-bg{
     background-color: #10101E;
 }
+
+.to-custom-bg{
+    --tw-gradient-to: #10101E;
+}
