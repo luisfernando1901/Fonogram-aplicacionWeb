@@ -9,12 +9,18 @@ import { ActivatedRoute } from '@angular/router';
 export class ArtistProfileComponent implements OnInit {
   //Variables
   artistName: string = '';
+  //Subscription variable
+  subscriptionDone = false;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.artistName = this.activatedRoute.snapshot.paramMap.get('artistprofile')!;
     console.log(this.artistName);
+  }
+
+  subscribeArtist(){
+    this.subscriptionDone = true;
   }
 
 }

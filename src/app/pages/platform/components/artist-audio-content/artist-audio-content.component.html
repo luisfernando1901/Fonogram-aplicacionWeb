@@ -1,3 +1,4 @@
+<!--Subscription view-->
 <div *ngIf="!subscriptionDone" class="flex flex-col h-full justify-center items-center space-y-8 text-white">
     <div class="w-44 h-44">
         <img class="rounded-xl object-cover h-44"
@@ -20,6 +21,7 @@
     <p class="">Escuchar sin suscribirse ></p>
     <img src="../../../../../assets/images/fonogram-logo.png" class="w-24 sm:w-32 fixed bottom-8" alt="">
 </div>
+<!--End Subscription view-->
 
 <div *ngIf="subscriptionDone" class="flex flex-col custom-bg">
     <!--Header-->
@@ -192,12 +194,19 @@
     <img src="../../../../../assets/images/fonogram-purple.png" class="w-32 sm:w-44 py-4" alt="">
     <p class="py-1">Términos y condiciones | Aviso de privacidad</p>
     <p class="py-1">Fonogram derechos reservados 2022</p>
-    <div class="h-40">
-    </div>
 </footer>
 <!--End Footer-->
-<!--Music Player-->
+
+<!--
+
+
 <div class="flex flex-col self-center justify-center items-center content-center overflow-x-auto mx-3">
     <ang-music-player [audioList] = audioList class="fixed bottom-3 right-3" [width]="widthSize" height="160px" ></ang-music-player>
 </div>
-<!--End Music Player-->
+
+
+
+
+
+
+-->

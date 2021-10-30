@@ -1,3 +1,28 @@
+<!--Subscription view-->
+<div *ngIf="!subscriptionDone" class="flex flex-col h-full justify-center items-center space-y-8 text-white">
+    <div class="w-44 h-44">
+        <img class="rounded-xl object-cover h-44"
+            src="https://www.liveabout.com/thmb/OkG9GiuiBMCh56zkE1zTXrUUNto=/1333x1000/smart/filters:no_upscale()/GettyImages-667156305-59befb3daf5d3a00102437f8.jpg"
+            alt="">
+    </div>
+    <div class="flex flex-col text-center">
+        <p class="font-bold text-3xl pt-2">Jane Doe</p>
+    <p class="font-bold text-lg">@{{artistName}}</p>
+    </div>
+    <div class=" relative ">
+        <div class="flex flex-row">
+            <input type="email" id="rounded-email"
+                class="rounded-l-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                placeholder="Registra tu email" />
+            <button class="bg-purple-800 h-12 px-3 rounded-r-lg" (click)="subscribeArtist()">Suscribir</button>
+        </div>
+    </div>
+
+    <p class="">Escuchar sin suscribirse ></p>
+    <img src="../../../../../assets/images/fonogram-logo.png" class="w-24 sm:w-32 fixed bottom-8" alt="">
+</div>
+<!--End Subscription view-->
+
 <div class="flex flex-col custom-bg">
     <!--Header-->
     <div class="flex flex-col items-center sm:flex-row sm:justify-between py-8 bg-no-repeat bg-fixed"
@@ -94,9 +119,6 @@
         <!--End Follow card-->
     </div>
     <!--End Header-->
-    <div class="flex h-56 z-0 -mt-56 bg-gradient-to-b from-transparent via-transparent to-custom-bg">
-
-    </div>
     <!--Content-->
     <div class="p-3 sm:py-12 sm:px-8 text-white">
         <div class="flex sm:flex-row flex-col-reverse">
