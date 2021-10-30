@@ -8,17 +8,26 @@ import { ArtistAudioContentComponent } from './components/artist-audio-content/a
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { HomeComponent } from './components/home/home.component';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+//Ivy Carousel
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+//Music Player
+import { AngMusicPlayerModule } from  'ang-music-player';
+import { ArtistSubscriptionComponent } from './components/artist-subscription/artist-subscription.component';
+
 @NgModule({
   declarations: [
     ArtistProfileComponent,
     ArtistAudioContentComponent,
-    HomeComponent
+    HomeComponent,
+    ArtistSubscriptionComponent
   ],
   imports: [
     CommonModule,
     PlatformRoutingModule,
     NzIconModule,
     NzAvatarModule,
+    IvyCarouselModule,
+    AngMusicPlayerModule
   ]
 })
 export class PlatformModule { }

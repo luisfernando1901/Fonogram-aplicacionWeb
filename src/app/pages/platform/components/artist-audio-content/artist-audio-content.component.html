@@ -1,4 +1,24 @@
-<div class="flex flex-col custom-bg">
+<div *ngIf="!subscriptionDone" class="flex flex-col h-full justify-center items-center space-y-8 text-white">
+    <div class="w-44 h-44">
+        <img class="rounded-xl object-cover h-44"
+            src="https://www.liveabout.com/thmb/OkG9GiuiBMCh56zkE1zTXrUUNto=/1333x1000/smart/filters:no_upscale()/GettyImages-667156305-59befb3daf5d3a00102437f8.jpg"
+            alt="">
+    </div>
+    <p class="font-bold text-2xl pt-2">Jane Doe</p>
+    <div class=" relative ">
+        <div class="flex flex-row">
+            <input type="email" id="rounded-email"
+                class="rounded-l-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                placeholder="Registra tu email" />
+            <button class="bg-purple-800 h-12 px-3 rounded-r-lg" (click)="subscribeArtist()">Suscribir</button>
+        </div>
+    </div>
+
+    <p class="">Escuchar sin suscribirse ></p>
+    <img src="../../../../../assets/images/fonogram-logo.png" class="w-24 sm:w-32 pt-16" alt="">
+</div>
+
+<div *ngIf="subscriptionDone" class="flex flex-col custom-bg">
     <!--Header-->
     <div class="flex flex-col items-center sm:flex-row sm:justify-between py-8 bg-no-repeat bg-fixed"
         style="background-size: 1600px; background-image: url('https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E=');">
@@ -8,10 +28,10 @@
                 alt="">
             <div class="flex flex-col lg:text-left lg:pt-0 pt-3 text-center justify-end text-white">
                 <p class="sm:text-lg text-base">Podcast</p>
-                <p class="sm:text-6xl text-4xl font-bold">Tracción de los metabots</p>
+                <p class="sm:text-6xl text-4xl font-bold">{{contentTitle}}</p>
                 <div class="flex flex-col lg:flex-row items-center">
                     <div class="flex flex-row">
-                        <p class="sm:text-lg text-base">Victor Cortés</p>
+                        <p class="sm:text-lg text-base">@{{artistName}}</p>
                         <span class="m-1 text-green-500">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
@@ -166,8 +186,15 @@
 <!--Footer-->
 <footer class="flex flex-col text-center items-center text-white py-3 custom-bg">
     <p class="py-1">Publica en</p>
-    <img src="../../../../../assets/images/fonogram-purple.png" class="w-52 sm:w-64 py-6" alt="">
+    <img src="../../../../../assets/images/fonogram-purple.png" class="w-32 sm:w-44 py-4" alt="">
     <p class="py-1">Términos y condiciones | Aviso de privacidad</p>
     <p class="py-1">Fonogram derechos reservados 2022</p>
+    <div class="h-40">
+    </div>
 </footer>
 <!--End Footer-->
+<!--Music Player-->
+<div class="flex flex-col self-center justify-center items-center content-center overflow-x-auto mx-3">
+    <ang-music-player [audioList] = audioList class="fixed bottom-3 right-3" [width]="widthSize" height="160px" ></ang-music-player>
+</div>
+<!--End Music Player-->

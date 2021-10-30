@@ -1,16 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-.fonogram-bg-color{
-    background-color: #525298;
+.fonogram-bg-color {
+  background-color: #525298;
 }
 
-.custom-bg{
-    background-color: #10101E;
+.custom-bg {
+  background-color: #10101e;
 }
 
-.to-custom-bg{
-    --tw-gradient-to: #10101E;
+.to-custom-bg {
+  --tw-gradient-to: #10101e;
+}
+
+.hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
 }

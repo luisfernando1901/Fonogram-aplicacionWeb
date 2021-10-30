@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-artist-profile',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./artist-profile.component.css']
 })
 export class ArtistProfileComponent implements OnInit {
+  //Variables
+  artistName: string = '';
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.artistName = this.activatedRoute.snapshot.paramMap.get('artistprofile')!;
+    console.log(this.artistName);
   }
 
 }
