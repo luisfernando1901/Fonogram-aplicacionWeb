@@ -7,7 +7,7 @@
     </div>
     <div class="flex flex-col text-center">
         <p class="font-bold text-3xl pt-2">Jane Doe</p>
-    <p class="font-bold text-lg">@{{artistName}}</p>
+        <p class="font-bold text-lg">@{{artistName}}</p>
     </div>
     <div class=" relative ">
         <div class="flex flex-row">
@@ -23,7 +23,7 @@
 </div>
 <!--End Subscription view-->
 
-<div class="flex flex-col custom-bg">
+<div *ngIf="subscriptionDone" class="flex flex-col custom-bg">
     <!--Header-->
     <div class="flex flex-col items-center sm:flex-row sm:justify-between py-8 bg-no-repeat bg-fixed"
         style="background-size: 1600px; background-image: url('https://media.istockphoto.com/vectors/podcast-line-button-white-colored-on-gradient-background-vector-vector-id1179997501?k=20&m=1179997501&s=612x612&w=0&h=BEeNMUCqvc88zdUUsZufGPLn7R2yrQ1w-GVqwdPjs7E=');">
@@ -120,7 +120,7 @@
     </div>
     <!--End Header-->
     <!--Content-->
-    <div class="p-3 sm:py-12 sm:px-8 text-white">
+    <div class="p-3 sm:py-12 sm:px-8 z-0 text-white">
         <div class="flex sm:flex-row flex-col-reverse">
             <!--Left zone-->
             <div class="sm:w-4/5 sm:pr-10">
@@ -264,5 +264,16 @@
         <img src="../../../../../assets/images/fonogram-purple.png" class="w-32 sm:w-44 py-4" alt="">
         <p class="py-1">Términos y condiciones | Aviso de privacidad</p>
         <p class="py-1">Fonogram derechos reservados 2022</p>
+        <div class="h-40 md:h-36">
+
+        </div>
     </footer>
     <!--End Footer-->
+    <!--Music Player-->
+    <div class="flex w-full fixed bottom-0 z-10 justify-center">
+        <gs-player class="w-full bg-gray-500 backdrop-filter backdrop-blur bg-opacity-40 rounded-xl sm:w-4/5"
+            [files]="files" [playerTheme]="playerTheme">
+        </gs-player>
+    </div>
+    <!--End Music Player-->
+</div>

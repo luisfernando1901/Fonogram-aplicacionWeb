@@ -194,9 +194,19 @@
     <img src="../../../../../assets/images/fonogram-purple.png" class="w-32 sm:w-44 py-4" alt="">
     <p class="py-1">Términos y condiciones | Aviso de privacidad</p>
     <p class="py-1">Fonogram derechos reservados 2022</p>
+    <div class="h-40 md:h-36">
+
+    </div>
 </footer>
 <!--End Footer-->
-
+<!--Music Player-->
+<div class="flex w-full fixed bottom-0 justify-center">
+    <gs-player class="w-full bg-gray-500 backdrop-filter backdrop-blur bg-opacity-40 rounded-xl sm:w-4/5"
+[files]="files"
+[playerTheme]="playerTheme">
+</gs-player>
+</div>
+<!--End Music Player-->
 <!--
 
 
