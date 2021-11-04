@@ -11,9 +11,6 @@ export class ArtistAudioContentComponent implements OnInit {
   //Variables
   contentTitle: string = '';
   artistName: string = '';
-  screenWidth: any;
-  screenHeight: any;
-  widthSize = '';
   //Subscription variable
   subscriptionDone = false;
   files = [
@@ -45,28 +42,15 @@ export class ArtistAudioContentComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.screenWidth = window.innerWidth - 100;
-    this.screenHeight = window.innerHeight;
-    console.log(this.screenWidth);
     this.artistName = this.activatedRoute.snapshot.params.artistprofile;
     this.contentTitle = this.activatedRoute.snapshot.params.contentTitle;
-    this.widthSize = `${this.screenWidth}px`
-    if (this.screenWidth <= 450) {
-      this.widthSize = `500px`
-    }
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.screenWidth = window.innerWidth - 100;
-    this.screenHeight = window.innerHeight;
-    console.log(this.screenWidth);
-    this.widthSize = `${this.screenWidth}px`
-    if (this.screenWidth <= 450) {
-      this.widthSize = `500px`
-    }
-  }
   subscribeArtist(){
+    this.subscriptionDone = true;
+  }
+
+  continueWithoutSubscription(){
     this.subscriptionDone = true;
   }
 

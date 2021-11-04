@@ -1,7 +1,7 @@
 <div>
     <img src="../../../../../assets/images/fonogram-logo.png" class="h-7 fixed mt-3 ml-5" alt="">
 </div>
-<section class="text-blueGray-700 flex flex-col justify-center content-center fonogram-bg-color">
+<section class="text-blueGray-700 flex flex-col justify-center items-center fonogram-bg-color">
     <div class="container items-center px-5 py-10">
         <div class="
             flex flex-col
@@ -34,7 +34,7 @@
                             <div class="flex flex-row flex-wrap justify-center -m-4">
                                 <!-- Card -->
                                 <div *ngFor="let card of subscriptionCards" class="p-4 w-80 h-96">
-                                    <button class="h-full w-full focus:border-blue-500 border-4 border-white bg-white px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                                    <button (click)="selectCard(card)" class="h-full w-full focus:border-blue-500 border-4 border-white bg-white px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
                                         <div class="h-full flex flex-col justify-between">
                                             <div class="h-2/4">
                                                 <h2 class="tracking-widest text-lg title-font font-medium text-gray-400 mb-1">

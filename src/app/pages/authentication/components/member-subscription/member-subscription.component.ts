@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MongodbService } from 'src/app/services/mongodb/mongodb.service';
 
 @Component({
   selector: 'app-member-subscription',
@@ -7,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./member-subscription.component.css']
 })
 export class MemberSubscriptionComponent implements OnInit {
+  //Lista de opciónes de subscripcion
   subscriptionCards = [
     {
       id: "podcasters",
@@ -32,21 +34,67 @@ export class MemberSubscriptionComponent implements OnInit {
       content1: "Contenido, charlas y eventos",
       content2: "Todo sobre growth & startups.",
     }
-    
   ];
-
-  constructor(private router:Router) { }
+  //Nombre del contenido de la subscripción
+  contentSubscription:string = "";
+  constructor(private router:Router,private _mongodb: MongodbService) {
+    this.checkSubscription();
+  }
 
   ngOnInit(): void {
   }
 
-  selectCard(){
-    console.log("Selected");
+  //Método para cambiar el contenido de la subscripción
+  selectCard(cardInfo:any){
+    this.contentSubscription = cardInfo['id'];
   }
 
-  makeSubscription(){
-    this.router.navigate(['/platform/fonogram/artistAudioContent']);
+  //Método para realizar la suscripción
+  async makeSubscription(){
+    let userUid = sessionStorage.getItem('fonogram_user_uid')!;
+    await this._mongodb.subscribeContent(userUid,this.contentSubscription);
+    switch (this.contentSubscription) {
+      case "podcasters":
+        this.router.navigate(['/platform/fonogram/podcasters']);
+        break;
+      case "creatividad & producción":
+        this.router.navigate(['/platform/fonogram/creatividad & producción']);
+        break;
+      case "marketing":
+        this.router.navigate(['/platform/fonogram/marketing']);
+        break;
+      case "growth & startups":
+        this.router.navigate(['/platform/fonogram/growth & startups']);
+        break;
+      default:
+        break;
+    }
+  }
+
+  //Método para verificar si el usuario ya está suscrito a alguna de las opciones y redireccionarlo a la página correspondiente
+  async checkSubscription(){
+    let userUid = sessionStorage.getItem('fonogram_user_uid')!;
+    let result:any = await this._mongodb.checkSubscription(userUid);
+    console.log(result);
+    if(result.subscribed){
+      this.router.navigate(['/platform/fonogram/artistAudioContent']);
+      switch (result.contentSubscription) {
+        case "podcasters":
+          this.router.navigate(['/platform/fonogram/podcasters']);
+          break;
+        case "creatividad & producción":
+          this.router.navigate(['/platform/fonogram/creatividad & producción']);
+          break;
+        case "marketing":
+          this.router.navigate(['/platform/fonogram/marketing']);
+          break;
+        case "growth & startups":
+          this.router.navigate(['/platform/fonogram/growth & startups']);
+          break;
+        default:
+          break;
+      }
+    }
   }
   
-
 }

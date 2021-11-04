@@ -11,13 +11,29 @@ export class MongodbService {
 
   //Método para loguear a un usuario
   async loginUser(user: object) {
-    let result = await this.http.post(`${environment.devBaseUrl}/login-V3`, user).toPromise();
+    let result = await this.http.post(`${environment.baseUrl}/login-V3`, user).toPromise();
     return result;
   }
 
   //Método para cambiar la contraseña de un usuario
-  async changePassword(userUuid: string, newPassword: object) {
-    let result = await this.http.post(`${environment.devBaseUrl}/changePassword/${userUuid}`, newPassword).toPromise();
+  async changePassword(userUid: string, newPassword: object) {
+    let result = await this.http.post(`${environment.baseUrl}/changePassword/${userUid}`, newPassword).toPromise();
+    return result;
+  }
+
+  //Método para realizar una suscripción
+  async subscribeContent(userUid: string, contentSubscription:string) {
+    let subscriptionInfo = {
+      userUid: userUid,
+      contentSubscription: contentSubscription
+    };
+    let result = await this.http.post(`${environment.baseUrl}/subscribeAudioClubBeta`,subscriptionInfo ).toPromise();
+    return result;
+  }
+
+  //Método para verificar si el usuario ya tiene una suscripción
+  async checkSubscription(userUid: string) {
+    let result = await this.http.get(`${environment.baseUrl}/verifyAudioClubBetaSubscription/${userUid}`).toPromise();
     return result;
   }
 }
