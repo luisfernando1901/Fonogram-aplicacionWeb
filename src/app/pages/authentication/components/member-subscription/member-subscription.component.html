@@ -33,8 +33,14 @@
                         <div class="container px-5 mx-auto">
                             <div class="flex flex-row flex-wrap justify-center -m-4">
                                 <!-- Card -->
-                                <div *ngFor="let card of subscriptionCards" class="p-4 w-80 h-96">
-                                    <button (click)="selectCard(card)" class="h-full w-full focus:border-blue-500 border-4 border-white bg-white px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                                <div *ngFor="let card of subscriptionCards; let i = index" class="p-4 w-80 h-96">
+                                    <div *ngIf="checkArray[i]" class="text-purple-700 flex justify-end -mb-10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 z-10" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                          </svg>
+                                    </div>
+                                    <button (click)="selectCard(card,i)" class="h-full w-full border-white bg-white px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative z-0">
+                                        
                                         <div class="h-full flex flex-col justify-between">
                                             <div class="h-2/4">
                                                 <h2 class="tracking-widest text-lg title-font font-medium text-gray-400 mb-1">
@@ -62,7 +68,7 @@
                     </section>
 
                     <div class="flex justify-center mt-8">
-                        <button (click)="makeSubscription()" type="submit" class="
+                        <button *ngIf="contentSubscription == ''? false:true" (click)="makeSubscription()" class="
                       flex
                       items-center
                       justify-center

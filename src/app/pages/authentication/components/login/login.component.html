@@ -102,6 +102,7 @@
                         </div>
                         <!--Login message-->
                         <div class="flex flex-row justify-center text-gray-300 font-bold">
+                            <i *ngIf="isLoading" class="text-2xl" nz-icon nzType="loading" nzTheme="outline"></i>
                             <p *ngIf="loginMessage == ''? false:true">{{loginMessage}}</p>
                         </div>
                         <!--End Login message-->

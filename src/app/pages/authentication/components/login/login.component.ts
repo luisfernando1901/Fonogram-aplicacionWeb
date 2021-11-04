@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
   });
   //Mensaje para el usuario
   loginMessage:string = '';
+  //Variable de isLoading
+  isLoading:boolean = false;
 
   constructor(private router:Router, private fb:FormBuilder, private _mongodb: MongodbService) { }
 
@@ -28,6 +30,8 @@ export class LoginComponent implements OnInit {
 
   //Método para validar el formulario de Login
   async login(){
+    this.isLoading = true;
+    this.loginMessage = '';
     try {
       let result:any = await this._mongodb.loginUser(this.userLoginForm.value);
       console.log(result);
@@ -35,12 +39,15 @@ export class LoginComponent implements OnInit {
         this.loginMessage = '';
         sessionStorage.setItem('fonogram_user_uid', result.user_uid);
         await this.router.navigate(['/login/memberSubscription']);
+        this.isLoading = false;
       }
       else{
         this.loginMessage = result.message;
+        this.isLoading = false;
       }
     } catch (error) {
-      this.loginMessage = 'Error en el login'
+      this.loginMessage = 'Error en el login';
+      this.isLoading = false;
     }
   }
 

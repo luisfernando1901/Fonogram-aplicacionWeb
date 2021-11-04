@@ -36,7 +36,9 @@ export class MemberSubscriptionComponent implements OnInit {
     }
   ];
   //Nombre del contenido de la subscripción
-  contentSubscription:string = "";
+  contentSubscription:string = '';
+  //Arreglo de check
+  checkArray = [false,false,false,false];
   constructor(private router:Router,private _mongodb: MongodbService) {
     this.checkSubscription();
   }
@@ -45,8 +47,11 @@ export class MemberSubscriptionComponent implements OnInit {
   }
 
   //Método para cambiar el contenido de la subscripción
-  selectCard(cardInfo:any){
+  selectCard(cardInfo:any, i:number){
+    this.checkArray = [false,false,false,false];
+    console.log(cardInfo);
     this.contentSubscription = cardInfo['id'];
+    this.checkArray[i] = true;
   }
 
   //Método para realizar la suscripción
