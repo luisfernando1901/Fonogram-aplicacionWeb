@@ -35,9 +35,10 @@ export class LoginComponent implements OnInit {
     try {
       let result:any = await this._mongodb.loginUser(this.userLoginForm.value);
       console.log(result);
-      if (result.user_uid != null) {
+      if (result.userUid != null) {
         this.loginMessage = '';
-        sessionStorage.setItem('fonogram_user_uid', result.user_uid);
+        sessionStorage.setItem('fonogram_userUid', result.userUid);
+        sessionStorage.setItem('fonogram_artistName', result.artistName);
         await this.router.navigate(['/login/memberSubscription']);
         this.isLoading = false;
       }
