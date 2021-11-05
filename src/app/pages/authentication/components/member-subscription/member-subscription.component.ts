@@ -39,6 +39,9 @@ export class MemberSubscriptionComponent implements OnInit {
   contentSubscription:string = '';
   //Arreglo de check
   checkArray = [false,false,false,false];
+  //Variable que indica loading
+  isLoading:boolean = true;
+
   constructor(private router:Router,private _mongodb: MongodbService) {
     this.checkSubscription();
   }
@@ -56,20 +59,20 @@ export class MemberSubscriptionComponent implements OnInit {
 
   //Método para realizar la suscripción
   async makeSubscription(){
-    let userUid = sessionStorage.getItem('fonogram_user_uid')!;
+    let userUid = sessionStorage.getItem('fonogram_userUid')!;
     await this._mongodb.subscribeContent(userUid,this.contentSubscription);
     switch (this.contentSubscription) {
       case "podcasters":
-        this.router.navigate(['/platform/fonogram/podcasters']);
+        await this.router.navigate(['/platform/fonogram/podcasters']);
         break;
       case "creatividad & producción":
-        this.router.navigate(['/platform/fonogram/creatividad & producción']);
+        await this.router.navigate(['/platform/fonogram/creatividad & producción']);
         break;
       case "marketing":
-        this.router.navigate(['/platform/fonogram/marketing']);
+        await this.router.navigate(['/platform/fonogram/marketing']);
         break;
       case "growth & startups":
-        this.router.navigate(['/platform/fonogram/growth & startups']);
+        await this.router.navigate(['/platform/fonogram/growth & startups']);
         break;
       default:
         break;
@@ -78,28 +81,28 @@ export class MemberSubscriptionComponent implements OnInit {
 
   //Método para verificar si el usuario ya está suscrito a alguna de las opciones y redireccionarlo a la página correspondiente
   async checkSubscription(){
-    let userUid = sessionStorage.getItem('fonogram_user_uid')!;
+    let userUid = sessionStorage.getItem('fonogram_userUid')!;
     let result:any = await this._mongodb.checkSubscription(userUid);
     console.log(result);
     if(result.subscribed){
-      this.router.navigate(['/platform/fonogram/artistAudioContent']);
       switch (result.contentSubscription) {
         case "podcasters":
-          this.router.navigate(['/platform/fonogram/podcasters']);
+          await this.router.navigate(['/platform/fonogram/podcasters']);
           break;
         case "creatividad & producción":
-          this.router.navigate(['/platform/fonogram/creatividad & producción']);
+          await this.router.navigate(['/platform/fonogram/creatividad & producción']);
           break;
         case "marketing":
-          this.router.navigate(['/platform/fonogram/marketing']);
+          await this.router.navigate(['/platform/fonogram/marketing']);
           break;
         case "growth & startups":
-          this.router.navigate(['/platform/fonogram/growth & startups']);
+          await this.router.navigate(['/platform/fonogram/growth & startups']);
           break;
         default:
           break;
       }
     }
+    this.isLoading = false;
   }
   
 }

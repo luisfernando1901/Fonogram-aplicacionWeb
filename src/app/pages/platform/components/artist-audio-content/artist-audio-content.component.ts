@@ -44,6 +44,7 @@ export class ArtistAudioContentComponent implements OnInit {
   ngOnInit(): void {
     this.artistName = this.activatedRoute.snapshot.params.artistprofile;
     this.contentTitle = this.activatedRoute.snapshot.params.contentTitle;
+    sessionStorage.getItem('fonogram_userUid') == null ? this.subscriptionDone = false : this.subscriptionDone = true;
   }
 
   subscribeArtist(){
