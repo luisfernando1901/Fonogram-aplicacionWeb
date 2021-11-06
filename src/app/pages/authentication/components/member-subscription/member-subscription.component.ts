@@ -41,12 +41,27 @@ export class MemberSubscriptionComponent implements OnInit {
   checkArray = [false,false,false,false];
   //Variable que indica loading
   isLoading:boolean = true;
+  //Variable donde estan los audios
+  audio = new Audio();
+  audioSrc = [
+    'https://firebasestorage.googleapis.com/v0/b/fonogram-c82df.appspot.com/o/contenido_libre%2Ftrailers%2FPitch_audio_club_PODCASTER_para_la_web.mp3?alt=media&token=8e0cc4bc-7917-4a62-a0a7-0d09c599823e',
+    'https://firebasestorage.googleapis.com/v0/b/fonogram-c82df.appspot.com/o/contenido_libre%2Ftrailers%2FPitch_audio_club_CREATIVIDAD_Y_PRODUCCION_para_la_web.mp3?alt=media&token=25ab278b-cca6-46ff-a1e8-757bf03a8305',
+    'https://firebasestorage.googleapis.com/v0/b/fonogram-c82df.appspot.com/o/contenido_libre%2Ftrailers%2FPitch_audio_club_MARKETING_para_la_web.mp3?alt=media&token=c9ab8646-ce69-4d11-87cd-12d922d1d47f',
+    'https://firebasestorage.googleapis.com/v0/b/fonogram-c82df.appspot.com/o/contenido_libre%2Ftrailers%2FPitch_audio_club_STARTUPS_para_la_web.mp3?alt=media&token=330e42ff-8874-4b3e-acb0-21ad79a96085'
+  ];
 
   constructor(private router:Router,private _mongodb: MongodbService) {
     this.checkSubscription();
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.audio.pause();
+    this.audio.src = '';
   }
 
   //Método para cambiar el contenido de la subscripción
@@ -103,6 +118,13 @@ export class MemberSubscriptionComponent implements OnInit {
       }
     }
     this.isLoading = false;
+  }
+
+  //Método para reproducir trailer
+  playTrailer(i:number){
+  this.audio.src = this.audioSrc[i];
+  this.audio.load();
+  this.audio.play();
   }
   
 }
